@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/"> <!-- thymeleaf is our templating -->
+<head>
+<meta charset="UTF-8">
+<title>SWelcome</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Welcome to the Person List homePage</h1>
+<h2 th:text ="${message}"></h2>
+<!-- In Thymeleaf the equivalent of JSP's ${page.context.request.contextPath}/edit.html would be @{/edit.html} -->
+<a th:href="@{/personList}"> Person List</a>
+</body>
+</html>
