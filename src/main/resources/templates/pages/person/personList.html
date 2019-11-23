@@ -23,7 +23,7 @@
 			<td th:text="${person.id}"></td>
 			<td th:text="${person.firstName}"></td>
 			<td th:text="${person.lastName}"></td>
-			<td><a th:href="@{/delPerson}">Delete</a></td>
+			<td><a th:href="@{/delPerson}+'/'+${person.id}">Delete</a></td>
 			</tr>
 		</table>
 		<!-- check if errorMessage is not null and not empty -->
