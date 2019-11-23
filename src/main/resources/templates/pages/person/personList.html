@@ -14,14 +14,23 @@
 	<div>
 		<table border="1">
 			<tr>
+			    <th>Id</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Actions</th>
 			</tr>
 			<tr th:each="person : ${persons}">
+			<td th:text="${person.id}"></td>
 			<td th:text="${person.firstName}"></td>
 			<td th:text="${person.lastName}"></td>
+			<td><a th:href="@{/delPerson}">Delete</a></td>
 			</tr>
 		</table>
+		<!-- check if errorMessage is not null and not empty -->
+	
+		
+		<!-- check if Message is not null and not empty -->
+	
 	</div>
 </body>
 </html>

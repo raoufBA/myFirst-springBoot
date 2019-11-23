@@ -3,6 +3,7 @@ package com.sip.ams.forms;
 
 public class PersonForm {
 	
+	private int id;
 	private String firstName;
 	private String lastName;
 	
@@ -26,6 +27,14 @@ public class PersonForm {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

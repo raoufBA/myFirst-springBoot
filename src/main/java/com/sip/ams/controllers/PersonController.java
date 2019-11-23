@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,8 +20,8 @@ public class PersonController {
 	private static List<Person> persons = new ArrayList<Person>();
 
 	static {
-		persons.add(new Person("Albert", "Einstein"));
-		persons.add(new Person("Frederic", "Gauss"));
+		persons.add(new Person(1,"Albert", "Einstein"));
+		persons.add(new Person(2,"Frederic", "Gauss"));
 	}
 
 	// Inject via application.properties
@@ -36,10 +37,20 @@ public class PersonController {
 		model.addAttribute("message", message);
 		return "pages/person/index";
 	}
+	
+	@RequestMapping(value = { "delPerson" }, method = RequestMethod.GET)
+	public String removePerson(@PathVariable("id") long id,Model model) {
+		message ="raouf";
+		model.addAttribute("message", message);
+		return "pages/person/personList";
+	}
+	
 
 	@RequestMapping(value = { "personList" }, method = RequestMethod.GET)
 	public String personList(Model model) {
 		model.addAttribute("persons", persons);
+		model.addAttribute("message", message);
+		model.addAttribute("errorMessage", errorMessage);
 		return "pages/person/personList";
 	}
 
