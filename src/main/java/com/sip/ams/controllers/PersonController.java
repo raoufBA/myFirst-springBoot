@@ -70,7 +70,7 @@ public class PersonController {
 		if (firstName != null && !firstName.isEmpty() && lastName != null && !lastName.isEmpty()) {
 			Person person = new Person(firstName, lastName);
 			persons.add(person);
-			return "redirect:/personList";
+			return "redirect:personList";
 		}
 
 		model.addAttribute("errorMessage", errorMessage);
